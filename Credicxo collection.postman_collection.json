@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "df089b3a-62a4-43a2-8468-7476e85221f5",
+		"name": "Credicxo collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "token_obtain_pair",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"user1\",\n    \"password\":\"xrock\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token_refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTkwNDMxMCwiaWF0IjoxNjQ1ODE3OTEwLCJqdGkiOiJiNjE2OTNiY2MxYjQ0NzM3YjA0OWU3N2RhMjYyZmQyYiIsInVzZXJfaWQiOjF9.gs_5J4GuGF_E9f5k4qK8cqSBAeQYeDph-v-GH-GV8xI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterApiView",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODE4NzcwLCJpYXQiOjE2NDU4MTg0NzAsImp0aSI6ImY3NmI2ZmU1ZDIwODQwNTQ4MWYxZjI0YzUxNWJkY2Y5IiwidXNlcl9pZCI6MX0.SIHhdLt3zgrwJgkBNuDU_ekV0s3GLQSH9g73bb-jKoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"user1\",\n    \"first_name\":\"Teacher\",\n    \"last_name\":\"1\",\n    \"email\":\"user1@teacher.com\",\n    \"password\":\"xrock\",\n    \"account_type\":\"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/RegisterApiView",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"RegisterApiView"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View all User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODE4NzcwLCJpYXQiOjE2NDU4MTg0NzAsImp0aSI6ImY3NmI2ZmU1ZDIwODQwNTQ4MWYxZjI0YzUxNWJkY2Y5IiwidXNlcl9pZCI6MX0.SIHhdLt3zgrwJgkBNuDU_ekV0s3GLQSH9g73bb-jKoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/ViewUserAccount",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ViewUserAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View all User by Account Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODE4NzcwLCJpYXQiOjE2NDU4MTg0NzAsImp0aSI6ImY3NmI2ZmU1ZDIwODQwNTQ4MWYxZjI0YzUxNWJkY2Y5IiwidXNlcl9pZCI6MX0.SIHhdLt3zgrwJgkBNuDU_ekV0s3GLQSH9g73bb-jKoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_type\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/ViewUserAccount",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ViewUserAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "token_obtain_pair",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student1\",\n    \"password\":\"xrock\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token_refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTkwNDMxMCwiaWF0IjoxNjQ1ODE3OTEwLCJqdGkiOiJiNjE2OTNiY2MxYjQ0NzM3YjA0OWU3N2RhMjYyZmQyYiIsInVzZXJfaWQiOjF9.gs_5J4GuGF_E9f5k4qK8cqSBAeQYeDph-v-GH-GV8xI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD student by Teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODE5MjM3LCJpYXQiOjE2NDU4MTg5MzcsImp0aSI6IjUyODAwNTc2ZWY3YTQ4ZmQ4ZGU4OTg0MTQyNTEyYmRiIiwidXNlcl9pZCI6Mn0.8oOyqczYWWsCv1y9YaQUC99kTBcDDdBhcxngTYpf3XA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student1\",\n    \"first_name\":\"1\",\n    \"last_name\":\"1\",\n    \"email\":\"user1@student1.com\",\n    \"password\":\"xrock\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/ViewAndAddstudentApiView",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ViewAndAddstudentApiView"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODE5MjM3LCJpYXQiOjE2NDU4MTg5MzcsImp0aSI6IjUyODAwNTc2ZWY3YTQ4ZmQ4ZGU4OTg0MTQyNTEyYmRiIiwidXNlcl9pZCI6Mn0.8oOyqczYWWsCv1y9YaQUC99kTBcDDdBhcxngTYpf3XA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/ViewAndAddstudentApiView",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ViewAndAddstudentApiView"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "token_obtain_pair",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student1\",\n    \"password\":\"xrock\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token_refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTkwNDMxMCwiaWF0IjoxNjQ1ODE3OTEwLCJqdGkiOiJiNjE2OTNiY2MxYjQ0NzM3YjA0OWU3N2RhMjYyZmQyYiIsInVzZXJfaWQiOjF9.gs_5J4GuGF_E9f5k4qK8cqSBAeQYeDph-v-GH-GV8xI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODIwODc0LCJpYXQiOjE2NDU4MjA1NzQsImp0aSI6IjZmYjJlNDZjYTIyMDQxODQ5N2I1MTcyZjRmNWM0OGNkIiwidXNlcl9pZCI6M30.YEbhBjeciGIbK0lkOwR7gCHYuPl69eI4A9tcD6gelmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/StudentProfile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"StudentProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SendOtpToForgetPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"student1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/SendOtpToForgetPassword",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"SendOtpToForgetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"student1\",\n    \"otp_value\":1234,\n    \"password\":\"xrock1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/VerifyForgetpasswordOtp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"VerifyForgetpasswordOtp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
